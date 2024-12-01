@@ -5,12 +5,12 @@
 - [📝 개요](#-개요)
 - [📦 의존 패키지](#-의존-패키지)
 - [🔧 기능](#-기능)
-    - [논리 자료형 `bool` 관련](#논리-자료형-bool-관련)
-    - [날짜 및 시간 `DateTime` 관련](#날짜-및-시간-DateTime-관련)
-    - [배열 `List` 관련](#배열-List-관련)
-    - [숫자 `num`, `int`, `double` 관련](#숫자-num-int-double-관련)
-    - [문자열 `String` 관련](#문자열-String-관련)
-    - [위젯 `Widget` 관련](#위젯-Widget-관련)
+  - [논리 자료형 `bool` 관련](#논리-자료형-bool-관련)
+  - [날짜 및 시간 `DateTime` 관련](#날짜-및-시간-DateTime-관련)
+  - [배열 `List` 관련](#배열-List-관련)
+  - [숫자 `num`, `int`, `double` 관련](#숫자-num-int-double-관련)
+  - [문자열 `String` 관련](#문자열-String-관련)
+  - [위젯 `Widget` 관련](#위젯-Widget-관련)
 - [🚀 사용법](#-사용법)
 - [🔄 업데이트 정보](#-업데이트-정보)
 
@@ -36,7 +36,7 @@
 
 - 다음의 패키지에 의존적입니다.
 
-> `cloud_firestore`: 5.5.0
+  > `cloud_firestore`: 5.5.0
 
 
 ## 🔧 기능
@@ -87,7 +87,7 @@
   ```dart
   void main() {
     print(DateTime(2000, 01, 01).age); // 25  (2025년 기준) 
-    print(DateTime(1975, 03, 18).age); // 49  (2025년 기준) 
+    print(DateTime(1976, 03, 18).age); // 49  (2025년 기준) 
   }
   ```
 
@@ -98,7 +98,7 @@
   ```dart
   void main() {
     print(DateTime(2000, 01, 01).generation); // 20  (2025년 기준) 
-    print(DateTime(1975, 03, 18).generation); // 40  (2025년 기준)
+    print(DateTime(1976, 03, 18).generation); // 40  (2025년 기준)
   }
   ```
 
@@ -108,8 +108,8 @@
 
   ```dart
   void main() {
-    print(DateTime.now().wd);  // Weekday.thursday
-  }
+  print(DateTime.now().wd);  // Weekday.thursday
+}
   ```
 
 #### Enum
@@ -135,24 +135,24 @@
 
   **매개변수**
 
-  | 자료형 | 변수명 | 설명 |
-      |:-:|:-:|:-:|
-  | `bool` | condition | 조건식 |
-  | `T` | element | 추가할 요소 |
+| 자료형 | 변수명 | 설명 |
+|:-:|:-:|:-:|
+| `bool` | condition | 조건식 |
+| `T` | element | 추가할 요소 |
 
 
   ```dart
   void main() {
-    List<int> list = [0];
-    list.addIf(list.sum < 5, list.last + 1);
-    print(list);  // [0, 1]
-    list.addIf(list.sum < 5, list.last + 1);
-    print(list);  // [0, 1, 2]
-    list.addIf(list.sum < 5, list.last + 1);
-    print(list);  // [0, 1, 2, 3]
-    list.addIf(list.sum < 5, list.last + 1);
-    print(list);  // [0, 1, 2, 3]
-  }
+  List<int> list = [0];
+  list.addIf(list.sum < 5, list.last + 1);
+  print(list);  // [0, 1]
+  list.addIf(list.sum < 5, list.last + 1);
+  print(list);  // [0, 1, 2]
+  list.addIf(list.sum < 5, list.last + 1);
+  print(list);  // [0, 1, 2, 3]
+  list.addIf(list.sum < 5, list.last + 1);
+  print(list);  // [0, 1, 2, 3]
+}
   ```
 
 ### 숫자 `num`, `int`, `double` 관련
@@ -227,16 +227,16 @@
 
   `gajeunja` 가 `true` 값을 가질 경우 갖은자를 사용하여 반환합니다.
 
-  | 자료형 | 변수명 | 설명 |
-      |:-:|:-:|:-:|
-  | `bool` | gajeunja | 갖은자 반환 여부 |
+| 자료형 | 변수명 | 설명 |
+|:-:|:-:|:-:|
+| `bool` | gajeunja | 갖은자 반환 여부 |
 
 
   ```dart
   void main() {
-    print(123.asHanja());                 // 一二三
-    print(123.asHanja(gajeunja: true));   // 壹貳參
-  }
+  print(123.asHanja());                 // 一二三
+  print(123.asHanja(gajeunja: true));   // 壹貳參
+}
   ```
 
 - `asKoreanWithUnits({bool ignoreIl = true}): String` - **Method**
@@ -350,9 +350,9 @@ var rangeExcludes = NumRange(1, 10, excludes: [
 
   **매개변수**
 
-  | 자료형 | 변수명 | 설명 |
-      |:-:|:-:|:-:|
-  | `T` | num | 범위 포함 여부를 판단할 숫자 |
+| 자료형 | 변수명 | 설명 |
+|:-:|:-:|:-:|
+| `T` | num | 범위 포함 여부를 판단할 숫자 |
 
   ```dart
   print(range.contains(3.8));         // true
@@ -745,28 +745,28 @@ void main() {
 
   위젯 사이에 세로 방향 구분자를 추가하여 반환합니다.
 
-  ```dart
-  void main() {
-    Widget buildWidget(int index) => Container(
-      width: 30.0,
-      color: Colors.lightBlueAccent,
-      child: Text(
-        '$index', textAlign: TextAlign.center,
-        style: const TextStyle(color: Colors.white),
-      ),
-    );
-    List<Widget> children = List.generate(5, buildWidget);
-  
-    Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(children: children.separateW(interval: 20.0)),
-        const SizedBox(height: 30.0),
-        Column(children: children.separateH(interval: 20.0)),
-      ],
-    );
-  }
-  ```
+```dart
+void main() {
+  Widget buildWidget(int index) => Container(
+    width: 30.0,
+    color: Colors.lightBlueAccent,
+    child: Text(
+      '$index', textAlign: TextAlign.center,
+      style: const TextStyle(color: Colors.white),
+    ),
+  );
+  List<Widget> children = List.generate(5, buildWidget);
+
+  Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Row(children: children.separateW(interval: 20.0)),
+      const SizedBox(height: 30.0),
+      Column(children: children.separateH(interval: 20.0)),
+    ],
+  );
+}
+```
 
 ![iterable_widget_extension](https://github.com/user-attachments/assets/f8225126-34fd-4464-8b24-5dd584606ec5)
 
@@ -777,47 +777,47 @@ void main() {
 
 1. 각 프로젝트의 `pubspec.yaml` 에 이 패키지를 의존성으로 추가합니다.
 
-- 최신버전
+  - 최신버전
 
-  ```yaml
-  dependencies:
-    seungjoon_utils:
-      git:
-        url: https://github.com/seungjoonH/seungjoon_utils.git
-        ref: latest
-  ```
+    ```yaml
+    dependencies:
+      seungjoon_utils:
+        git:
+          url: https://github.com/seungjoonH/seungjoon_utils.git
+          ref: latest
+    ```
 
-- 특정버전
+  - 특정버전
 
-  ```yaml
-  dependencies:
-    seungjoon_utils:
-      git:
-        url: https://github.com/seungjoonH/seungjoon_utils.git
-        ref: v1.0.0
-  ```
+    ```yaml
+    dependencies:
+      seungjoon_utils:
+        git:
+          url: https://github.com/seungjoonH/seungjoon_utils.git
+          ref: v1.0.0
+    ```
 
 2. `pub get` 실행
 
-아래 명령어를 실행하여 의존성을 설치합니다.
-
-  ```bash
-  flutter pub get
-  ```
+    아래 명령어를 실행하여 의존성을 설치합니다.
+    
+    ```bash
+    flutter pub get
+    ```
 
 3. 패키지 임포트
 
-사용하려는 프로젝트에서 `seungjoon_utils` 를 import 하세요.
-
-  ```dart
-  import 'package:seungjoon_utils/seungjoon_utils.dart';
-  ```
+    사용하려는 프로젝트에서 `seungjoon_utils` 를 import 하세요.
+    
+    ```dart
+    import 'package:seungjoon_utils/util.dart';
+    ```
 
 4. 유틸리티 기능 사용
 
 5. 버전 업데이트
 
-패키지에 변경 사항이 있을 때 `pubspec.yaml` 의 의존성을 업데이트합니다.
+    패키지에 변경 사항이 있을 때 `pubspec.yaml` 의 의존성을 업데이트합니다.
 
 <br>
 
